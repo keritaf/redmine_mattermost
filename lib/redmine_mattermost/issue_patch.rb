@@ -22,8 +22,8 @@ module RedmineMattermost
       end
 
       def save_from_issue
-        if not @create_already_fired
-          Redmine::Hook.call_hook(:redmine_mattermost_issues_edit_after_save, { :issue => self, :journal => self.current_journal}) unless self.current_journal.nil?
+        unless @create_already_fired
+          Redmine::Hook.call_hook(:redmine_mattermost_issues_edit_after_save, {:issue => self, :journal => self.current_journal}) unless self.current_journal.nil?
         end
         return true
       end

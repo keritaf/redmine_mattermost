@@ -18,7 +18,10 @@ Redmine::Plugin.register :redmine_mattermost do
 			'channel' => nil,
 			'icon' => 'https://raw.githubusercontent.com/altsol/redmine_mattermost/assets/icon.png',
 			'username' => 'redmine',
-			'display_watchers' => 'no'
+			'display_watchers' => 'no',
+			'post_updates' => '1',
+      'post_private_issues' => '1',
+      'post_private_notes' => '1'
 		},
 		:partial => 'settings/mattermost_settings'
 end
